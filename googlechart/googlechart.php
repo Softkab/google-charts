@@ -33,7 +33,7 @@ $script="<script type='text/javascript'> google.charts.load('current', {'package
 $script.=$resultado;
 $script.="]); var options = { title: '";
 $script.=esc_attr($a['nombre']);
-$script.="', pieHole: 0.4, }; var chart = new google.visualization.PieChart(document.getElementById('";
+$script.="',backgroundColor: { fill:'transparent' }, pieHole: 0.4, slices: { 0: { color: '#F2631D' }, 1: { color: '#F6CB1A' }, 2: { color: '#BDB7B7' }, 3: { color: '#8B8283' }, 4: { color: '#484647' }, 5: { color: '#283440' }, 6: { color: '#2D6690' }, 7: { color: '#FFFFFF' } }, }; var chart = new google.visualization.PieChart(document.getElementById('";
 $script.=urls_amigables($codigo);
 $script.="')); chart.draw(data, options); } </script>";
 $script.="<div id='";
@@ -45,7 +45,6 @@ $script.="'></div>";
 echo $script;
 }
 add_shortcode('Charts', 'form_creation');
-
 function urls_amigables($url) {
       $url = strtolower($url);
       $find = array('á', 'é', 'í', 'ó', 'ú', 'ñ');
